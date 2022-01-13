@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forside</title> <!--Dette er min title, det er det der vil stå oppe i fanen-->
+
+    <link href="Content/bootstrap.css" rel="stylesheet" /> <!--Bootstrap reference-->
+
+    <link rel="icon" href="Pictures/VikingV.png"> <!--Dette gør, at jeg kan ændre det ikon mit faneblad skal have, så jeg har et Vikings logo.-->
+    <link href="CSS/General.css" rel="stylesheet" />
+    <link href="CSS/index.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!--Dette er min forsidehader, som jeg har pakket ind i en div
+        Hvor jeg så har lavede en nav class med nogle forskellige properties
+        Navbar gør at den ved den skal være en navigationsbar, og er predefineret størrelse, så den ikke fylder hele skærmen
+        navbar-expand er til hvorda nden skal reagere på skærmstørrelse, om den skal expand eller kollapse
+        til sidst giver jeg den et navn, som jeg så bruger til at style i min css -->
+    <div id="forsideheader">
+        <header>
+            <nav class="navbar navbar-expand-sm  navigation">
+                <!--Laver endnu en class, som er en container-fluid som strækker hele widthen ud til ens viewport, den gør også så den vil enten blive større eller mindre ifht. viewportens ændring
+                    Justify content center, er bare at dens content skal centreres-->
+                <div class="container-fluid justify-content-center ">
+                    <!--Et anchor-tag med en class navbar-brand, som er til min navigationsbars logo f.eks., giver billedet et id hvis jeg vil style størrelsen f.eks-->
+                    <a class="navbar-brand">
+                        <img id="logo" src="Pictures/VikingV.png" />
+                    </a>
+                    <!--Har en unordered list med en list i, som har class nav-item, så det er et item i min navigationsbar.
+                        Active betyder bare at det er den side man er på-->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Forside</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Sites/Galleri.html">Galleri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Sites/Vision.html">Om os</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Sites/Kontakt.html">Kontakt</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Sites/Varelager.html">Varelager</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Sites/OpretVare.html">Opret vare</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+
+        </header>
+
+    </div>
+
+
+
+    <!--Dette er mine trailers/videoer på forsiden
+        jeg har startet med at lave en class med propertyen row, som vil stille dem  ien række, så har jeg lavet endnu en class med order-first som ændre rækkefølgen-->
+    <div class="row">
+        <div class="order-first">
+            <!--En class for hver video, for at få dem til at placeres nedenunder hinanden, og ikke ved siden. Embed-responsive, er en property som gør det embeddet emne responsive, hver trailer har også deres egen class med samme navn for at style  dem
+            -->
+            <div class="embed-responsive">
+                <iframe alt="season1" class="trailers" src="https://www.youtube.com/embed/9GgxinPwAGc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="embed-responsive">
+                <iframe alt="season2" class="trailers" src="https://www.youtube.com/embed/x6rLjCrA5QQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="embed-responsive ">
+                <iframe alt="season3" class="trailers" src="https://www.youtube.com/embed/lE6YTts8cgY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="embed-responsive ">
+                <iframe alt="season4" class="trailers" src="https://www.youtube.com/embed/3PK2tIyENVA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="embed-responsive ">
+                <iframe alt="season5" class="trailers" src="https://www.youtube.com/embed/s28cBkmoVIk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="embed-responsive ">
+                <iframe alt="season6part1" class="trailers" src="https://www.youtube.com/embed/Y7d0A5re7-0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="embed-responsive ">
+                <iframe alt="season6part2" class="trailers" src="https://www.youtube.com/embed/Auzs95InJzo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!--Min footer, er inde i en div med navnet footer til evt. styling
+        så har jeg lavet endnu en container fluid
+        text-center, gør at min tekst er centreret, footer er for at ændre min listes styling
+        hver list har en class med list-unstyled, som fjerner nogle prikker, som normalt er i en liste.-->
+    <div class="container"></div>
+    <div class="footer">
+        <footer>
+            <div class="container-fluid text-center footer">
+                <ul>
+                    <li class="list-unstyled"><b>Vikings Series</b></li>
+                    <li class="list-unstyled">History Channel</li>
+                    <li class="list-unstyled">Streaming on HBOMax, Netflix, Amazon Prime and Netflix</li>
+                    <li class="list-unstyled">2021 History Channel. All Rights Reserved</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

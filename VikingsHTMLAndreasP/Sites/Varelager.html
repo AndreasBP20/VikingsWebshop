@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../Content/bootstrap.css" rel="stylesheet" />  <!--Bootstrap reference-->
+    <script src="../Scripts/bootstrap.js"></script> <!--Reference til bootstrap javascript, som jeg har været nød til, for at få mit MODAL til at virke, til at sende en "pop-up" bekræftelse.-->
+    <link href="../CSS/General.css" rel="stylesheet" /> <!--Referencer til stylesheets-->
+    <link href="../CSS/Varelager.css" rel="stylesheet" />
+    <link rel="icon" href="../Pictures/VikingV.png">
+    <title>Varelager</title>
+</head>
+<body>
+    <!--Dette er min forsidehader, som jeg har pakket ind i en div
+        Hvor jeg så har lavede en nav class med nogle forskellige properties
+        Navbar gør at den ved den skal være en navigationsbar, og er predefineret størrelse, så den ikke fylder hele skærmen
+        navbar-expand er til hvorda nden skal reagere på skærmstørrelse, om den skal expand eller kollapse
+        til sidst giver jeg den et navn, som jeg så bruger til at style i min css -->
+    <div id="forsideheader">
+        <header>
+            <nav class="navbar navbar-expand-sm  navigation">
+                <!--Laver endnu en class, som er en container-fluid som strækker hele widthen ud til ens viewport, den gør også så den vil enten blive større eller mindre ifht. viewportens ændring
+                    Justify content center, er bare at dens content skal centreres-->
+                <div class="container-fluid justify-content-center ">
+                    <!--Et anchor-tag med en class navbar-brand, som er til min navigationsbars logo f.eks., giver billedet et id hvis jeg vil style størrelsen f.eks-->
+                    <a class="navbar-brand">
+                        <img id="logo" src="../Pictures/VikingV.png" />
+                    </a>
+                    <!--Har en unordered list med en list i, som har class nav-item, så det er et item i min navigationsbar.
+                        Active betyder bare at det er den side man er på-->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../index.html">Forside</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Sites/Galleri.html">Galleri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Sites/Vision.html">Om os</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Sites/Kontakt.html">Kontakt</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Sites/Varelager.html">Varelager</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Sites/OpretVare.html">Opret vare</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!--Dette er min modal, med et id, som jeg kan kalde i min button. -->
+        <div class="modal" id="DeleteModal">
+            <!--Modal dialog, er det det der gør at der bliver vist en pop-up-->
+            <div class="modal-dialog">
+                <!--Modal content, er lidt i ordet, den del som har alt mit indhold.-->
+                <div class="modal-content">
+
+                    <!-- Modal Header, f.eks til titel og en kryds knap til at gå ud af "menuen" igen.-->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Slet vare?</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body, som har noget tekst, hvor jeg har skrevet om man er sikker på man vil slette den valgte vare. -->
+                    <div class="modal-body">
+                        Er du sikker på du vil slette denne vare?
+                    </div>
+
+                    <!-- Modal footer, som indeholder mine to knapper til at enten fortryde eller slette varen. -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fortryd</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Slet</button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--Mit table, som er responsive, og har en margintop på 5-->
+        <div class="table-responsive-sm mt-5">
+            <!--Angiver mit tabel skal være stribet og mørk farvetema-->
+            <table class="table table-striped table-dark ">
+                <thead>
+                    <!--Table row, med mine table headers i, altså en form for "overskrift" eller titel til det data inde i min tabel-->
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Navn</th>
+                        <th scope="col">Beskrivelse</th>
+                        <th scope="col">Lagerstatus</th>
+                        <th scope="col">Placering</th>
+                        <th scope="col">Indkøbspris</th>
+                        <th scope="col">Billede</th>
+                        <th scope="col">Rediger</th>
+                        <th scope="col">Slet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Række 1, hvor jeg indskriver alt min data, samt mine to knapper. Den ene knap rediger vare, sender mig til en anden side, min anden knap, kører min modal længere oppe. Alle rækker er lavet fuldstændig ens, med forskellige data.-->
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Ragnar Lothbrok statue</td>
+                        <td>50cm høj statue af Ragnar Lothbrok fra serien Vikings</td>
+                        <td>31 på lager</td>
+                        <td>Hylde: A38</td>
+                        <td>1595dkk</td>
+                        <!--Har mine billeder, som jeg har gjort display til none ovre i min css, og så lavet en paragraph class, som jeg så kan lave en hover på, så den vil vise mig billede, når jeg holder musen over. Samme for alle de andre billeder i min tabel-->
+                        <td><p class="showPic">Se vare</p><img class="WarePicture" src="../Pictures/RagnarStatue.jpg" /></td>
+                        <td><a href="RedigerVare.html" class="btn btn-primary">Rediger vare</a></td>
+                        <!--Data-bs-toggle, siger hvad vi skal gøre, og bs-target, henter det der skal gøres-->
+                        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal">Slet vare</button></td>
+
+                    </tr>
+                    <!--Række 2-->
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Lagertha statue</td>
+                        <td>50cm høj statue af Lagertha fra serien Vikings</td>
+                        <td>11 på lager</td>
+                        <td>Hylde: A39</td>
+                        <td>1595dkk</td>
+                        <td><p class="showPic">Se vare</p><img class="WarePicture" src="../Pictures/LagerthaStatue.jpg" /></td>
+                        <td><a href="RedigerVare.html" class="btn btn-primary">Rediger vare</a></td>
+                        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal">Slet vare</button></td>
+
+                    </tr>
+
+                    <!--Række 3-->
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Floki statue</td>
+                        <td>50cm høj statue af Floki fra serien Vikings</td>
+                        <td>19 på lager</td>
+                        <td>Hylde: A40</td>
+                        <td>1595dkk</td>
+                        <td><p class="showPic">Se vare</p><img class="WarePicture" src="../Pictures/LokiStatue.jpg" /></td>
+                        <td><a href="RedigerVare.html" class="btn btn-primary">Rediger vare</a></td>
+                        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal">Slet vare</button></td>
+
+                    </tr>
+
+                    <!--Række 4-->
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Vikings Season 1</td>
+                        <td>Vikings Season 1 på dvd</td>
+                        <td>298 på lager</td>
+                        <td>Hylde: A41</td>
+                        <td>150dkk</td>
+                        <td><p class="showPic">Se vare</p><img class="WarePicture" src="../Pictures/Season1.jpg" /></td>
+                        <td><a href="RedigerVare.html" class="btn btn-primary">Rediger vare</a></td>
+                        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal">Slet vare</button></td>
+
+                    </tr>
+
+                    <!--Række 5-->
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Vikings Season 2</td>
+                        <td>Vikings Season 2 på dvd</td>
+                        <td>465 på lager</td>
+                        <td>Hylde: A42</td>
+                        <td>150dkk</td>
+                        <td><p class="showPic">Se vare</p><img class="WarePicture" src="../Pictures/Season2.jpg" /></td>
+                        <td><a href="RedigerVare.html" class="btn btn-primary">Rediger vare</a></td>
+                        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal">Slet vare</button></td>
+
+                    </tr>
+
+                    <!--Række 6-->
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>Vikings Season 3</td>
+                        <td>Vikings Season 3 på dvd</td>
+                        <td>918 på lager</td>
+                        <td>Hylde: A43</td>
+                        <td>150dkk</td>
+                        <td><p class="showPic">Se vare</p><img class="WarePicture" src="../Pictures/Season3.jpg" /></td>
+                        <td><a href="RedigerVare.html" class="btn btn-primary">Rediger vare</a></td>
+                        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal">Slet vare</button></td>
+
+                    </tr>
+
+                    <!--Række 7-->
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Vikings Season 4</td>
+                        <td>Vikings Season 4 på dvd</td>
+                        <td>349 på lager</td>
+                        <td>Hylde: A44</td>
+                        <td>150dkk</td>
+                        <td><p class="showPic">Se vare</p><img class="WarePicture" src="../Pictures/Season4.jpg" /></td>
+                        <td><a href="RedigerVare.html" class="btn btn-primary">Rediger vare</a></td>
+                        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal">Slet vare</button></td>
+
+                    </tr>
+
+                    <!--Række 8-->
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>Vikings Season 5</td>
+                        <td>Vikings Season 5 på dvd</td>
+                        <td>487 på lager</td>
+                        <td>Hylde: A45</td>
+                        <td>150dkk</td>
+                        <td><p class="showPic">Se vare</p><img class="WarePicture" src="../Pictures/Season5.png" /></td>
+                        <td><a href="RedigerVare.html" class="btn btn-primary">Rediger vare</a></td>
+                        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal">Slet vare</button></td>
+
+                    </tr>
+
+                    <!--Række 9-->
+                    <tr>
+                        <th scope="row">9</th>
+                        <td>Vikings Season 6 Part I</td>
+                        <td>Vikings Season 6 Part I på dvd</td>
+                        <td>848 på lager</td>
+                        <td>Hylde: A46</td>
+                        <td>150dkk</td>
+                        <td><p class="showPic">Se vare</p><img class="WarePicture" src="../Pictures/Season6.jpg" /></td>
+                        <td><a href="RedigerVare.html" class="btn btn-primary">Rediger vare</a></td>
+                        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal">Slet vare</button></td>
+
+                    </tr>
+
+                    <!--Række 10-->
+                    <tr>
+                        <th scope="row">10</th>
+                        <td>Vikings Season 6 Part II</td>
+                        <td>Vikings Season 6 Part II på dvd</td>
+                        <td> 549 på lager</td>
+                        <td>Hylde: A47</td>
+                        <td>150dkk</td>
+                        <td><p class="showPic">Se vare</p><img class="WarePicture" src="../Pictures/Season6part2.jpg" /></td>
+                        <td><a href="RedigerVare.html" class="btn btn-primary">Rediger vare</a></td>
+                        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteModal">Slet vare</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+    <!--Footer som sædvandligt.-->
+    <div class="container"></div>
+    <div class="footer">
+        <footer>
+            <div class="container-fluid text-center footer">
+                <ul>
+                    <li class="list-unstyled"><b>Vikings Series</b></li>
+                    <li class="list-unstyled">History Channel</li>
+                    <li class="list-unstyled">Streaming on HBOMax, Netflix, Amazon Prime and Netflix</li>
+                    <li class="list-unstyled">2021 History Channel. All Rights Reserved</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>

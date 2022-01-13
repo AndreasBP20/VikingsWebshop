@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../CSS/General.css" rel="stylesheet" />
+    <title>Rediger vare</title>
+    <link rel="icon" href="../Pictures/VikingV.png">
+    <link href="../Content/bootstrap.css" rel="stylesheet" />  <!--Bootstrap reference-->
+    <link href="../CSS/RedigerVare.css" rel="stylesheet" />
+    <script src="../Scripts/bootstrap.js"></script> <!--Reference til bootstrap javascript, som jeg har været nød til, for at få mit MODAL til at virke, til at sende en "pop-up" bekræftelse.-->
+</head>
+<body>
+    <!--Simpel form med inputs så man kan redigere varen man trykkede på.-->
+    <div class="container-fluid justify-content-center mt-auto mb-auto ">
+        <form action="RedigerVare.html">
+
+
+            <input class="RedigerVare" type="text" id="VareID" name="" placeholder="Produkt-ID" /> <br />
+
+
+            <input class="RedigerVare" type="text" id="VareNavn" name="" placeholder="Produkt-Navn" /> <br />
+
+            <input class="RedigerVare" type="text" id="LagerStatus" name="" placeholder="Lagerstatus" /> <br />
+
+            <input class="RedigerVare" type="text" id="ProduktBeskrivelse" name="" placeholder="Produkt-Beskrivelse" /> <br />
+
+
+            <input class="RedigerVare" type="text" id="VarePlacering" name="" placeholder="Placering" /> <br />
+
+            <input class="RedigerVare" type="text" id="Indkøbspris" name="" placeholder="Indkøbspris" /> <br />
+            <div class="text-center"> <!--Centrere min knap i midten med resten af inputs-->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#EditModal">Rediger vare</button>
+            </div>
+
+        </form>
+
+
+
+    </div>
+
+    <div class="modal" id="EditModal">
+        <!--Modal dialog, er det det der gør at der bliver vist en pop-up-->
+        <div class="modal-dialog">
+            <!--Modal content, er lidt i ordet, den del som har alt mit indhold.-->
+            <div class="modal-content">
+
+                <!-- Modal Header, f.eks til titel og en kryds knap til at gå ud af "menuen" igen.-->
+                <div class="modal-header">
+                    <h4 class="modal-title">Redigere vare?</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body, som har noget tekst, hvor jeg har skrevet om man er sikker på man vil slette den valgte vare. -->
+                <div class="modal-body">
+                    Er du sikker på denne vare skal redigere?
+                </div>
+
+                <!-- Modal footer, som indeholder mine to knapper til at enten fortryde eller slette varen. -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fortryd</button>
+                    <a href="Varelager.html"><button type="button" class="btn btn-success" data-bs-dismiss="modal">Rediger</button></a> <!--Anchor tag, for at sende tilbage til varelager som en slags bekræftelse for at varen er redigeret-->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

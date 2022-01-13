@@ -1,0 +1,10 @@
+﻿body {
+}
+/*Får pictures placeret i midten*/
+.pictures {
+    display: block;
+    margin: 0 auto;
+    
+   
+   
+}

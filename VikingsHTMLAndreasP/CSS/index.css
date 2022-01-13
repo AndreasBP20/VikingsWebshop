@@ -1,0 +1,20 @@
+﻿body {
+ 
+
+}
+/*Ændre min index rows til at være 100% bredde, da de ikke var helt ude i kanten før.*/
+.row {
+    width: 100%;
+}
+/*Ændre mine trailers så de står i midten, og har noget mellemrum mellem hinanden, samt laver størrelse på dem.*/
+.trailers {
+    
+    display: block;
+    margin: 0 auto;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    width: 60vh;
+    height: 40vh;
+    position:relative;
+}
+

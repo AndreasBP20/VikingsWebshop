@@ -1,0 +1,14 @@
+﻿body {
+}
+
+/*Styler min kontaktformular meget lidt, for at få den placeret i midten*/
+.kontaktformular {
+    display: block;
+    margin: 0 auto;
+}
+/*Styler min kontaktformular meget lidt, for at få den placeret i midten*/
+.actors{
+    
+    margin-left: auto;
+    margin-right: auto;
+}

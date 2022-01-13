@@ -1,0 +1,12 @@
+﻿body {
+    height: 100vh;
+}
+/*Display none til ikke at vise dem på siden samt en størrelse, da de ellers ville fylde for meget*/
+.WarePicture {
+    display:none;
+    width:200px;
+}
+/*Her gør jeg så at når man hover over min tekst, ivl den gøre mine warepictures til display block, så de vises*/
+.showPic:hover + .WarePicture{ 
+   display: block;
+}

@@ -1,0 +1,62 @@
+﻿/*Generelt css
+    Her har jeg ændret bodyen på alle mine sider, med et baggrundsbillede, og gør så den fylder det hele og følger med når man scroller
+*/
+body {
+    background-image: url(../Pictures/background.jpg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    width: 100%;
+    margin: 0;
+}
+/*Ændre logoets bredde til 100%*/
+#logo {
+    
+    width:100%;
+
+}
+/*Gør at min navbar brand størrelse kun er 50px, da den ellers ville fylde rigtig meget.*/
+.navbar-brand{
+    width:50px;
+}
+/*Ændre baggrundsfarven på navigationsbaren*/
+.navigation {
+    
+    background-color: #06001A;
+    
+}
+/*ændre mellemrum mellem listens elementer*/
+.navigation li {
+    padding-left: 50px;
+}
+/*Ændre skriften på min listes elementer*/
+.navigation a {
+    color:silver;
+    font-size: 200%;
+    padding-left: 5px;
+}
+/*Ændre tekstens farve og fjerner prikker*/
+.footer li {
+    color: silver;
+    text-decoration: none;
+    position:relative;
+    bottom:0;
+}
+
+   /* styler lidt med højden, farve og positon.
+*/
+.footer {
+    height: 100px;
+    background-color: #06001A;
+    position: relative;
+    margin-top: auto;
+    bottom: 0;
+}
+.container {
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+}
